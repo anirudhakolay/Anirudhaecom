@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+</head>
+<style>
+#form{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 100px;
+}
+#pro{
+     margin-top: 70px;
+    width: 80%;
+    margin-left: 100px;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div id="pro">
+    <h3>{{data.name}}</h3>
+    <p id="price">Rs </p>
+    </div>
+    <form id="form" method="get" action="/continue/{{data._id}}">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Name</label>
+      <input type="name" class="form-control" id="inputEmail4" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">E-mail</label>
+      <input type="email" class="form-control" id="inputPassword4" placeholder="email"name="email1">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Phone no</label>
+    <input type="text" class="form-control" id="phone" placeholder="Enter the phone no">
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Maharshtra</option>
+        <option>Delhi</option>
+        <option>Gujrat</option>
+        <option>Karnataka</option>
+        <option>Bihar</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+<a href="/continue/{{data._id}}" class="btn btn-primary" onclick="setitem()">Cash on Delivery</a><br><br>
+
+</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+    let pri=localStorage.getItem("price1");
+    document.getElementById('price').innerHTML=pri;
+    //console.log(price1);
+function setitem(){
+    let name2=document.getElementById("inputEmail4").value;
+    let email=document.getElementById("inputPassword4").value;
+    let add1=document.getElementById("inputAddress").value;
+    let add2=document.getElementById("inputAddress2").value;
+    let city=document.getElementById("inputCity").value; 
+    let state=document.getElementById("inputState").value;
+    let zip=document.getElementById("inputZip").value;
+     let phone=document.getElementById("phone").value;
+
+    localStorage.setItem("nam",name2);
+    localStorage.setItem("email1",email);
+    localStorage.setItem("add1",add1);
+    localStorage.setItem("add2",add2);
+    localStorage.setItem("city1",city);
+    localStorage.setItem("state1",state);
+    localStorage.setItem("zip1",zip);
+    localStorage.setItem("phone1",phone);
+}
+ </script>
+</body>
+
+</html>

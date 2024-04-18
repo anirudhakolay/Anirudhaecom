@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <meta name="robots" content="noindex,follow" />
+<style>
+    /* Basic Styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+}
+
+.right-column {
+  width: 35%;
+  margin-top: 60px;
+}
+
+
+/* Left Column */
+.left-column img {
+  margin-top: 100px;
+  height: 600px;
+  width: 500px;
+  margin-left: 50px;
+  
+  
+  
+  transition: all 0.3s ease;
+}
+
+.
+
+
+/* Right Column */
+
+/* Product Description */
+.product-description {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+
+/* Product Configuration */
+.product-color span,
+.cable-config span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86939E;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Product Color */
+.product-color {
+  margin-bottom: 30px;
+}
+
+
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;
+}
+
+.cart-btn {
+  display: inline-block;
+  background-color: #7DC855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+  margin: 10px;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+}
+
+@media (max-width: 535px) {
+  .left-column img {
+    width: 220px;
+    top: -85px;
+  }
+}
+
+</style>
+
+
+</head>
+
+<body>
+   {{>navbar}}
+     <!--  <main class="container"id="main">
+            <h1>
+                I am laptop
+            </h1>
+        <!-- Left Column / Headphones Image -->
+       <!--   <div class="left-column">
+          <img src="https://static.toiimg.com/thumb/resizemode-4,msid-73980765,imgsize-200,width-1200/73980765.jpg" alt="">            
+        </div>
+
+
+        <!-- Right Column -->
+        <!-- <div class="right-column">
+
+            <!-- Product Description -->
+           <!--   <div class="product-description">
+                <span name="category">Mobile</span>
+                <h1 name="name" id="name">Realme C3</h1>
+
+                <p name="description">Realme c3 come  wtih g70 processor with 4gb ram 64 internal storage</p>
+                <br>
+                
+                <p name="spec">Display  6.1-inch (15.5 cm diagonal) Super Retina XDR display with Tru…
+                </p>
+                <br>
+                <p name="offer">10% off for new user</p>
+            </div>
+
+            
+            <!-- Product Pricing -->
+             <!-- <div class="product-price">
+                <span name="price">10000</span>
+                <a href="kart" class="cart-btn">Buy Now</a>
+            </div>
+        </div>
+        </div>
+       
+
+    </main> -->
+
+    <script>
+        url="http://localhost:3000/hii";
+                    fetch(url).then((response) =>{
+                return response.json();
+                console.log("Inside First time");
+            }).then((data)=>{
+                console.log(data);
+               data.forEach(function(element,index){
+              
+                 let news= ` 
+                
+                      <main class="container"id="main">
+
+        <!-- Left Column / Headphones Image -->
+        <div class="left-column">
+          <img src="${element['url']}" alt="">            
+        </div>
+
+
+        <!-- Right Column -->
+        <div class="right-column">
+
+            <!-- Product Description -->
+            <div class="product-description">
+                <span name="category">${element['category']}</span>
+                <h1 name="name" id="name">${element['name']}</h1>
+
+                <p name="description">${data['description']}</p>
+                <br>
+                
+                <p name="spec">${element['spec']}
+                </p>
+                <br>
+                <p name="offer">${element['offer']}</p>
+            </div>
+
+            
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span name="price">${element['price']}</span>
+                <a href="kart" class="cart-btn">Buy Now</a>
+            </div>
+        </div>
+        </div>
+       
+
+    </main>`
+
+
+                })
+                                    
+
+                    console.log("all right");
+                          let rajat=document.getElementById('main').innerHTML=news;
+            })
+            
+
+    </script>
+</body>
+
+</html>

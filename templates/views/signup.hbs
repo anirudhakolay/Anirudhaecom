@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title> Welcome to Electro Online</title>
+</head>
+<style>
+#cont{
+    margin-top: 100px;
+}
+</style>
+<body>
+    {{>navbar}}
+    
+    <div class="container" id="cont">
+        <h1>Electro Online</h1>
+        <form action="/registers" method="post">
+            <div class="form-group">
+                <label for="name">Enter Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name">
+               
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="text" class="form-control" id="email" placeholder="Enter your email"name="email">
+                
+            </div>
+            <div class="form-group">
+                <label for="email">Create a Password</label>
+                <input type="text" class="form-control" id="pass" placeholder="Create a password"name="password">
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Enter your phone number</label>
+                <input class="form-control" name="phone" id="phone" rows="3">
+                
+            </div>
+        
+            <input type="submit" value="submit" id="submit" class="btn btn-primary"></input>
+        </form>
+        <a href="login" id=""> Login Account   </a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDU6aT3GSrrpFw_B5BBaE1TiPZXrvbdGB0",
+    authDomain: "spatial-thinker-321614.firebaseapp.com",
+    projectId: "spatial-thinker-321614",
+    storageBucket: "spatial-thinker-321614.appspot.com",
+    messagingSenderId: "40728729680",
+    appId: "1:40728729680:web:3921ad8aec4dd983871955",
+    measurementId: "G-E8XDYXTR6W"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+
+  const analytics = getAnalytics(app);
+    let sighUp=document.getElementById("submit");
+  sighUp.addEventListener('click',(e) => {
+
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('pass').value;
+    var phoneno = document.getElementById('phone').value;
+
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+     // Signed in 
+      const user = userCredential.user;
+
+      set(ref(database, 'users/' + user.uid),{
+          name: username,
+          email: email
+      })
+
+      alert('user created!');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    // ..
+    });
+
+});
+
+</script>
+        
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+</head>
+<style>
+    .main {
+    padding: 20px;
+    font-family: 'Helvetica', serif;
+    box-shadow: 5px 5px 7px 5px #888888;
+}
+
+.main h1 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Helvetica', serif;
+}
+
+input {
+    font-family: 'Helvetica', serif;
+    width:100%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #767474;
+}
+
+input[type=submit] {
+    font-family: 'Helvetica', serif;
+    width: 50%;
+    background-color: #767474;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+</style>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 main">
+                <form action="/upload" method="post">
+                    <h2>Upload the data</h2>
+                    <label for="">Product name</label>
+                    <input type="text" class="box" id="name" name="name" />
+                    <br>
+                    <label for="">URl Image</label>
+                    <input type="text" class="box" id="name" name="url" />
+                    <br>
+                    <label for="">price</label>
+                    <input type="text" class="box" id="email" name="price" required />
+                    <br>
+                    <label for="">Available offer</label>
+                    <input type="text" class="box" id="phno" name="offer" />
+                    <br>
+                    <label for="">Product Description</label>
+                    <input type="text" class="box" id="password" name="description" required />
+                    <br>
+                    <label for="">Specification </label>
+                    <input type="text" class="box" id="password" name="spec" required />
+                     <label for="">Category </label>
+                    <input type="text" class="box" id="password" name="category" required />
+                    <input type="submit" value="Submit" id="submit" />
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

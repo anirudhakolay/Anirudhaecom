@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+:root {
+    --main-bg-color: #2874f0;
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background: var(--main-bg-color); 
+    font-family: 'Lato', sans-serif;
+}
+
+
+  
+
+  
+  
+  #log:hover{display: block;}
+  
+  #log:hover{background-color: #68690d;}
+    #log:hover{color:black;}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 120px;
+    padding: 0 25px;
+}
+
+nav ul{
+    height: 58px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none; 
+    padding: 0 23px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{ 
+    font-weight: bolder;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search input{
+    width: 30vw;
+    height: 27px;
+    border-radius: 5px;
+    margin: 0 16px 0 56px;
+    padding:0 12px;
+}
+
+.search button{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+.slider{ 
+    width: 80vw;
+    margin: 12px auto;
+    overflow: hidden;
+}
+
+
+
+nav{
+    display: flex;
+    background-color: #2874f0;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+.btn{
+    padding: 5px 10px;
+    color: white;
+    background: var(--main-bg-color);
+    border: 2px solid white;
+    border-radius: 7px;
+    cursor: pointer; 
+   
+}
+.btn1{
+     padding: 5px 10px;
+    color: white;
+    background: violet;
+    border: 2px solid white;
+    border-radius: 7px;
+    cursor: pointer; 
+    margin-top: 13px;
+    margin-left: 15px;
+}
+
+.my-1{
+    margin: 5px 0;
+}
+
+.my-2{
+    margin: 26px 0;
+}
+
+.text-center{
+    text-align: center;
+}
+
+  @media screen and (max-width:1000px){
+
+    nav{
+        flex-direction: column;
+    }
+
+    .slider{
+        height: 23vh;
+    }
+
+    .logo{
+        justify-content: center;
+        margin: 12px 0;
+    }
+
+    nav ul{
+        justify-content: center;
+    }
+
+    .search{
+        justify-content: center;
+    }
+
+    .search input{
+        margin: 12px 16px;
+    }
+
+    nav ul {
+        height: 34px;
+    }
+    
+}
+</style>
+<body>
+ <header class="sticky">
+        <nav>
+            <div class="logo">
+                <img src="https://lh3.googleusercontent.com/moBmy24-lIB_ZdpGuUOuuCBa6aCGFbAA0-Hjf3e6pnzAWiXqDvP1SnKFQNXlFoQBqkdNxg=s170" alt="">
+            </div>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li id="log"><a href="login">{{nam.name}}</a></li>
+
+                <li id="log"><a href="logout">logout</a></li>
+            
+            
+
+                <li id="log"><a href="adminlog">seller</a></li>
+                
+
+                
+            </ul>
+            <div class="search">
+                <input type="text" name="" id="" placeholder="Search Here">
+                <button class="btn">Search</button>
+                </div>
+                <div class="kart">
+                    <button class="btn1" id="kartbtn"><a href="kart">kart</a></button>
+                    <h1></h1>
+                </div>
+        </nav>
+    </header>
+    </body>
+    
+</html>
