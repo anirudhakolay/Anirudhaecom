@@ -17,7 +17,10 @@ const port=process.env.PORT ||3000;
 const static_path=path.join(__dirname ,"../templates/views");
 const template_path=path.join(__dirname ,"../templates/views");
 const partials_path=path.join(__dirname ,"../templates/partials");
+const cors = require('cors');
 
+
+app.use(cors({origin: 'https://anirudhaecom-production.up.railway.app'}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
